@@ -72,14 +72,16 @@
 	<section>
 <?php
 if(isset($_POST['porque'])):
+		$msj='<h2><i class="fa fa-futbol-o" aria-hidden="true"></i> Gracias por contestar</h2>
+				<p>Pronto nos contactaremos</p>';
 		//Cambiar AQUI los datos de la coneccion para la Base de Datos
-		$mysqli = new mysqli("localhost", "my_user", "my_password", "ddbb");
+		$mysqli = new mysqli("localhost", "comiccon_uchile", "T9,UATS#ndf)", "comiccon_udechile");
 		// Check connection
 		if (mysqli_connect_errno()):
   			$msj='<h2>Failed to connect to MySQL: </h2><p>' . mysqli_connect_error().'</p>';
 		else:
 			if ($insert = $mysqli->prepare("INSERT INTO formulario (nombre,ciudad,correo,rut,juegas,nacimiento,porque) VALUES (?,?,?,?,?,?,?)")) :
-				$insert->bind_param("sssssss", $nombre, $ciudad, $correo, $rut, $juegas, $nacimiento, $porque);
+				
 				$nombre=$_POST['nombre'];
 				$ciudad=$_POST['ciudad'];
 				$correo=$_POST['correo'];
@@ -87,10 +89,13 @@ if(isset($_POST['porque'])):
 				$juegas=$_POST['juegas'];
 				$nacimiento=$_POST['nacimiento'];
 				$porque=$_POST['porque'];
+		
+				$insert->bind_param("sssssss", $nombre, $ciudad, $correo, $rut, $juegas, $nacimiento, $porque);
 				
 				$insert->execute();
-				$msj='<h2><i class="fa fa-futbol-o" aria-hidden="true"></i> Gracias por contestar</h2>
-				<p>Pronto nos contactaremos</p>';
+			else:
+				$msj='<h2>Error:</h2>
+					<p>Error al grabar</p>'.$mysqli->error;
 			endif;
 			$mysqli->close();
 		endif;
@@ -161,11 +166,18 @@ if(isset($_POST['porque'])):
 	</div></footer>
 </div>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/jquery.datepick.css"> 
+<script type="text/javascript" src="js/jquery.plugin.min.js"></script> 
+<script type="text/javascript" src="js/jquery.datepick.min.js"></script>
+<script type="text/javascript" src="js/jquery.datepick.lang.min.js"></script>
+<script type="text/javascript" src="js/jquery.datepick-es.js"></script>
+
+
 <!-- Latest compiled and minified JavaScript -->
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="general.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDoKJQD7-i70HLGg4Ed3RLaPPXeWF5GIQU&libraries=places&callback=initialize" async defer></script>
 <script src="jquery.rut.min.js"></script>
-<script src="general.js"></script>
 
 
 </body>

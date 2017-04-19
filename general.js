@@ -1,13 +1,4 @@
-﻿function initialize() {
-	var options = {
-		types: ['(cities)'],
-		componentRestrictions: {country: "cl"}
-	};
-
-	var input = document.getElementById('city');
-	var autocomplete = new google.maps.places.Autocomplete(input, options);
-}
-$(function() {
+﻿$(function() {
 	$("input#rut").rut({
 		formatOn: 'keyup',
 		minimumLength: 8
@@ -19,4 +10,14 @@ $(function() {
 		$(this).parent('.form-group').removeClass('has-error');
 		$(this).parent('.form-group').addClass('has-success');
 	});
+	$('input[type="date"]').datepick({dateFormat: 'yyyy-mm-dd'});
 });
+function initialize() {
+	var options = {
+		types: ['(cities)'],
+		componentRestrictions: {country: "cl"}
+	};
+
+	var input = document.getElementById('city');
+	var autocomplete = new google.maps.places.Autocomplete(input, options);
+}
