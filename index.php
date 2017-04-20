@@ -18,7 +18,7 @@
 <div class="container-fluid gral">
 	<header><div class="container">
 		<img src="titulo.svg" class="title-img">
-		<p class="txt">Sigue los pasos, inscribete y se parte de La U de los Hinchas</p>
+		<p class="txt">Sigue los pasos, inscríbete y se parte de La U de los Hinchas</p>
 		<div class="row fechas">
 			<div class="col-md-2">
 				<strong>SANTIAGO</strong>
