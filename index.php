@@ -75,7 +75,7 @@ if(isset($_POST['porque'])):
 		$msj='<h2><i class="fa fa-futbol-o" aria-hidden="true"></i> Gracias por contestar</h2>
 				<p>Pronto nos contactaremos</p>';
 		//Cambiar AQUI los datos de la coneccion para la Base de Datos
-		$mysqli = new mysqli("localhost", "comiccon_uchile", "T9,UATS#ndf)", "comiccon_udechile");
+		$mysqli = new mysqli("localhost", "udechile", "T9,UATS#ndf)", "udechile");
 		// Check connection
 		if (mysqli_connect_errno()):
   			$msj='<h2>Failed to connect to MySQL: </h2><p>' . mysqli_connect_error().'</p>';
@@ -144,7 +144,7 @@ if(isset($_POST['porque'])):
 			<div class="col-md-4">
 				<div class="num"><i class="fa fa-facebook-official" aria-hidden="true"></i></div>
 				<div class="txt">
-					 Sube tu video de 15 segundos haciendo una jugada o demostrando tu amor por el club y estarás participando. #LaUdeLosHinchas
+					 Sube tu video de 15 segundos haciendo una jugada o demostrando tu amor por el club y ya estarás participando. #LaUdeLosHinchas
 				</div>
 				<img src="circulo-bg.svg" class="bg">
 			</div>
@@ -158,7 +158,7 @@ if(isset($_POST['porque'])):
 			<div class="col-md-4">
 				<div class="num"><i class="fa fa-instagram" aria-hidden="true"></i></div>
 				<div class="txt">
-					 Sube tu foto de por qué deberías jugar el partido contra la U de todos los tiempos. #LaUdeLosHinchas
+					 Sube una foto y cuéntanos por qué deberías jugar el partido con la U de todos los tiempos. #LaUdeLosHinchas
 				</div>
 				<img src="circulo-bg.svg" class="bg">
 			</div>
