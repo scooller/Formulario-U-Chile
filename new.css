@@ -1,4 +1,4 @@
-﻿@charset "utf-8";
+﻿﻿@charset "utf-8";
 /* CSS Document */
 html, body{
 	height: 100%;
@@ -65,7 +65,7 @@ header .v-align{
 	width: 100%;
 }
 header .carousel-caption{
-	top: 20px;
+	top: 80%;
 }
 /*
 header .carousel-caption{
@@ -228,4 +228,11 @@ footer{
 	header .txt {
 		width: 100%;
 	}
+}
+
+#share {
+	position: absolute;
+    left: 7px;
+    bottom: -81px;
+    z-index: 12;
 }

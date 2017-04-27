@@ -52,7 +52,11 @@ endif;
 <body>
 	<header>
 		<div class="barra container-fluid"><div class="row">
-			<div class="col-sm-4"><img src="img/logo-U.svg" class="logo"> <span class="hidden-sm hidden-xs">UDECHILE.CL</span></div>
+			<div class="col-sm-4">
+				<img src="img/logo-U.svg" class="logo">
+				<div id="share"></div>
+				<span class="hidden-sm hidden-xs"> UDECHILE.CL</span>
+			</div>
 			<div class="col-sm-6 col-sm-offset-2"><strong>#YoSoyDeLaU</strong> | 90 años - Más que una pasión</div>
 		</div></div>
 		<!-- slider -->
@@ -580,8 +584,7 @@ Jorge Soc&iacute;as, Entrenador de La U de Todos Los Hinchas <br>
 <?php endif; ?>
 			<button type="submit" class="btn btn-red">Enviar</button>
 
-		</form>
-		<div id="share"></div>
+		</form>		
 <?php endif; ?>
 
 	</section>
