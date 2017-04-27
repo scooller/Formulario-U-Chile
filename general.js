@@ -10,7 +10,37 @@
 		$(this).parent('.form-group').removeClass('has-error');
 		$(this).parent('.form-group').addClass('has-success');
 	});
-	$('input[type="date"]').datepick({dateFormat: 'yyyy-mm-dd'});
+	$('select[name="ciudad"]').change(function(event){
+		$('select[name="categoria"]').prop( "disabled", false );
+		$('select[name="categoria"]').focus();
+		$('select[name="horario"]').prop( "disabled", true );
+		$('select[name="horario"]').empty();
+		$('select[name="horario"]').append('<option disabled selected>¿Elige tu horario?</option>');
+	});
+	$('select[name="categoria"]').change(function(event){
+		var $val=$(this).val();
+		var $city=$('select[name="ciudad"]').val();
+		
+		$('select[name="horario"]').prop( "disabled", true );
+		$('select[name="horario"]').empty();
+		$('select[name="horario"]').append('<option disabled selected>¿Elige tu horario?</option>');
+		$.ajax({
+			url: "/index-new.php",
+			data: {tramo:$val,ciudad:$city},
+			dataType: 'html',
+			method: 'GET'
+		}).done(function(resp) {			
+			console.log(resp);
+			$('select[name="horario"]').append(resp);
+			$('select[name="horario"]').prop( "disabled", false );
+			$('select[name="horario"]').focus();
+		});
+		/*$('select[name="horario"]').append('<option>9:00</option>');	
+		$('select[name="horario"]').prop( "disabled", false );
+		$('select[name="horario"]').focus();*/
+	});
+	
+	
 });
 function initialize() {
 	var options = {
